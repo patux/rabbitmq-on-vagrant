@@ -1,7 +1,0 @@
-%%-*-erlang-*-
-%
-% Example configuration file for Rabbit MQ 
-%
-  [
-    {mnesia, [{dump_log_write_threshold, 1000}]}
-  ].
