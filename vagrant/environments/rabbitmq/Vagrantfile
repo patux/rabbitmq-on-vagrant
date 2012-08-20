@@ -1,3 +1,5 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 $: << File.expand_path(File.dirname(__FILE__) + "../../../lib")
 
 
@@ -6,6 +8,7 @@ Vagrant::Config.run do |config|
   config.ssh.max_tries = 50
   #config.vm.boot_mode = :gui
   config.vm.boot_mode = :headless
+  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
 
       nodes = [	
       	  {:hostname => 'haproxy', :ip => '192.168.2.2',:fwdhost => 5672, :fwdguest => 5672},	 
@@ -28,15 +31,14 @@ Vagrant::Config.run do |config|
 	                                "--name", node[:hostname],
 	                                "--memory", memory.to_s]
 
-          node_config.vm.box = "lucid32-1"
-          #node_config.vm.box = "lucid64-1"
+          node_config.vm.box = "lucid32"
           node_config.vm.host_name = node[:hostname]
 
 		  node_config.vm.network :hostonly, node[:ip]
 		  
           node_config.vm.provision :puppet do |puppet|
             puppet.manifests_path = '../../../puppet/manifests'
-            puppet.manifest_file = 'site.pp'
+            puppet.manifest_file = 'rabbit-site.pp'
             puppet.module_path = ['../../../puppet/services', '../../../puppet/modules']		  
 			#puppet.options = ["--verbose","--debug"]
           end
