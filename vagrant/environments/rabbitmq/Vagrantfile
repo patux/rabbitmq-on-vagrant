@@ -11,10 +11,10 @@ Vagrant::Config.run do |config|
   config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
 
       nodes = [	
-      	  {:hostname => 'haproxy', :ip => '192.168.2.2',:fwdhost => 5672, :fwdguest => 5672},	 
-		  {:hostname => 'rabbitmq-server-a', :ip => '192.168.2.10'},
-		  {:hostname => 'rabbitmq-server-b', :ip => '192.168.2.11'},
-		  {:hostname => 'rabbitmq-server-c',:ip => '192.168.2.12'},
+      	  {:hostname => 'haproxy-a', :ip => '192.168.2.2',:fwdhost => 5672, :fwdguest => 5672},	 
+		  {:hostname => 'rabbitmq-server-aa', :ip => '192.168.2.10'},
+		  {:hostname => 'rabbitmq-server-ab', :ip => '192.168.2.11'},
+		  {:hostname => 'rabbitmq-server-ac',:ip => '192.168.2.12'},
 		  
       ]
 
