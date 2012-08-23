@@ -1,5 +1,5 @@
 class apt {
-		
+
 	# Translate distribution information to match sources.list file
 	$aptsourceslist = $lsbdistdescription ? {
 		"Ubuntu 10.04.4 LTS" => "sources.list-10.04",

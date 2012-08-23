@@ -1,4 +1,5 @@
 class haproxy {
+    require apt
 
 	package  {
 	"haproxy":
