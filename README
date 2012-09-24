@@ -1,0 +1,7 @@
+
+This is a fork of: 
+http://www.opencredo.com/blog/rabbitmq-cluster-development-environment-with-vagrant-and-puppet
+
+Instructions:
+$ cd vagrant/environments/rabbitmq 
+$ vagrant up
